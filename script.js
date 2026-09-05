@@ -2,19 +2,22 @@
 
 const contactForm = document.getElementById("contactForm");
 
-contactForm.addEventListener("submit", function (event) {
+if (contactForm) {
 
-    event.preventDefault();
+    contactForm.addEventListener("submit", function (event) {
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const subject = document.getElementById("subject").value;
-    const message = document.getElementById("message").value;
+        event.preventDefault();
 
-    const phoneNumber = "918XXXXXXXXX";
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
 
-    const whatsappMessage =
-        `Hello Muhammed Fadil NK,
+        // Muhammed Fadil NK WhatsApp number
+        const phoneNumber = "918138849603";
+
+        const whatsappMessage =
+            `Hello Muhammed Fadil NK,
 
 Name: ${name}
 Email: ${email}
@@ -23,9 +26,12 @@ Subject: ${subject}
 Message:
 ${message}`;
 
-    const whatsappURL =
-        `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+        const whatsappURL =
+            `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-    window.open(whatsappURL, "_blank");
+        // Open WhatsApp
+        window.open(whatsappURL, "_blank");
 
-}); 
+    });
+
+}
